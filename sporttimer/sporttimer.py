@@ -9,7 +9,7 @@ import time
 
 
 try:
-    # Подключение к существующей базе данных
+    # Подключение к существующей базе данных Илья вредный
     connection = psycopg2.connect(user="sporttime",
                                   # пароль, который указали при установке PostgreSQL
                                   password="SportRus12!",
