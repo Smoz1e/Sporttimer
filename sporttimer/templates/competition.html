@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='competition.js') }}" defer></script>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Спортивный таймер</title>
+</head>
+<body>
+
+<p>{{competitionName}}</p>
+<hr>
+
+<div class="container">
+    <div class="menucantainer" >
+    <div id="menu" class="menu">
+        <a href="/">На главную</a><br>
+        <a href="/competitionList">Список соревнований</a><br>
+
+    </div>
+    <div id="kpList" class="kplist">
+
+    </div>
+        </div>
+    <div id="participantList" class="kpresults">
+
+
+    </div>
+</div>
+</body>
+</html>
+<!DOCTYPE html>

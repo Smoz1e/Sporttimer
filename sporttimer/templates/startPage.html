@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ url_for('static', filename='startPage.js') }}" defer></script>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <title>Спортивный таймер</title>
+</head>
+<body>
+<div id="competitionForm" class="competitionForm">
+<p>{{context}}</p>
+<p>Номер группы: {{groupNumber}}</p>
+<p>Интервал между участниками: {{interval}}</p>
+<p>Колличество участников: {{numberOfParticipant}}</p>
+<p>Первый номер {{firstNumber}}</p>
+<p>Дата соревнований: {{date}}</p>
+<button id="startButton">Старт</button>
+<div id="time"></div>
+<hr>
+<p>Создание контрольных точек</p><br/>
+Название контрольной точки: <input type='text' name="kpName" id="kpName"/><br/>
+Дистанция: <input type="number" name="kpDistance" id="kpDistance" value='0'/><br/>
+<button type="button" id="addKPButton">Добавить контрольную точку</button>
+
+<hr>
+</div>
+<div id="kpList"></div>
+<hr>
+<p>Данные участников:</p><br/>
+<div id="participantList"></div>
+</body>
+</html>

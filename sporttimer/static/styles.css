@@ -1,0 +1,311 @@
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.users-list {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+}
+.table-list {
+    flex: 2.5;
+    padding: 20px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+}
+
+.table-events {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-bottom: none;
+    overflow-y: auto;
+}
+
+.users-list h2 {
+    margin-bottom: 10px;
+}
+
+.users-list li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.users-list li.active {
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.users-list img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.chat {
+    flex: 2.5; 
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+    border-bottom: none; 
+    overflow-y: auto;
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    transform: translateX(0);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+.chat-messages {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+/* Стили для сообщений */
+.message {
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-start;
+    background-color: #f0f8ff;
+}
+
+.admin-message {
+    align-self: flex-end;
+    background-color: #e6e6e6;
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.chat-input button {
+    padding: 8px 16px;
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Стили для темной темы */
+.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .users-list {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .users-list li.active {
+    background-color: #444;
+}
+
+.dark-mode .chat {
+    background-color: #1e1e1e; 
+    color: #fff;
+}
+
+.dark-mode .chat-header label {
+    color: #fff;
+}
+
+.dark-mode .slider {
+    background-color: #777;
+}
+
+.dark-mode .slider:before {
+    background-color: #ccc;
+}
+
+.dark-mode .chat-messages {
+    border-color: #555;
+}
+
+.dark-mode .chat-input input {
+    border-color: #555;
+    color: #fff;
+    background-color: #333;
+}
+
+.dark-mode .chat-input button {
+    background-color: #0d8bf2;
+}
+
+/* Медиа-запрос для адаптивности */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .users-list, .chat {
+        border: none;
+        padding: 0;
+        width: 100%;
+        max-height: none;
+    }
+
+    .users-list li.active {
+        background-color: #fff;
+    }
+}
+
+
+/* Адаптация для экранов шириной до 480px */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .users-list, .chat {
+        border: none;
+        padding: 0;
+        width: 100%;
+        max-height: none;
+    }
+
+    .users-list li.active {
+        background-color: #fff;
+    }
+
+    .chat {
+        border-top: 1px solid #ccc;
+    }
+}
+
+/* Стили для кнопки */
+.glare-button {
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  background: linear-gradient(120deg, #FF6B6B, #ff0000); /* Градиентный фон кнопки для объемного эффекта */
+  color: #fff; /* Белый цвет текста на кнопке */
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  font-size: 15px;
+  padding: 15px; /* Отступы внутри кнопки */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Добавляем тень для трехмерного эффекта */
+}
+.glare-button-l {
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px;
+  background:#00aff0; /* Градиентный фон кнопки для объемного эффекта */
+  color: #fff; /* Белый цвет текста на кнопке */
+  position: relative;
+  overflow: hidden;
+  width: 150px;
+  font-size: 15px;
+  padding: 15px; /* Отступы внутри кнопки */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Добавляем тень для трехмерного эффекта */
+}
+/* Стили для создания блика на кнопке */
+.glare-button:before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%, /* Прозрачность начала блика */
+    rgba(255, 255, 255, 0.8), /* Цвет блика */
+    rgba(255, 255, 255, 0) 70% /* Прозрачность конца блика */
+  );
+  top: 0;
+  left: -100px;
+  animation: shine 2s infinite linear; /* Анимация блика */
+}
+
+/* Ключевые кадры для анимации блика */
+@keyframes shine {
+  0% {
+    left: -100px; /* Начальная позиция блика (левая сторона кнопки) */
+  }
+  20% {
+    left: 100%; /* Позиция блика в конце (правая сторона кнопки) */
+  }
+  100% {
+    left: 100%; /* Завершение анимации */
+  }
+}
+
+
+
+

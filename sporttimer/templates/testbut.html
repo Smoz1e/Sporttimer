@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test buttons</title>
+</head>
+<body>
+<div id="results"></div>
+<script>
+    for (let i = 0; i < 3; i++){
+    const butt = document.createElement("button");
+        butt.setAttribute('id', 'reservation_'+res_item.Reserv_L_id);
+
+    }
+<script>
+  document.addEventListener('click', function(event) {
+    let id = event.target.dataset.toggleId;
+    if (!id) return;
+
+    let elem = document.getElementById(id);
+
+    elem.hidden = !elem.hidden;
+  });
+</script>
+</script>
+</body>
+</html>
